@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="DellikCorp.Apps.RgbControlCenter.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:views="clr-namespace:DellikCorp.Apps.RgbControlCenter.Views">
+
+    <ShellContent
+        Title="ListDetail"
+        ContentTemplate="{DataTemplate views:ListDetailPage}"
+        Icon="iconlistdetail.png"
+        Route="ListDetailPage"
+        Shell.NavBarIsVisible="true" />
+
+</Shell>

@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33829.357
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DellikCorp.Libs.ColorPicker", "DellikCorp.Libs.Controls\DellikCorp.Libs.ColorPicker\DellikCorp.Libs.ColorPicker.csproj", "{E36F6CEE-080E-4A61-BDE6-7DBB63E36D4E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DellikCorp.Apps.RgbControlCenter", "DellikCorp.Apps.RgbControlCenter\DellikCorp.Apps.RgbControlCenter.csproj", "{681F16AF-4473-46C7-A1CF-1C5EACB9F926}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E36F6CEE-080E-4A61-BDE6-7DBB63E36D4E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E36F6CEE-080E-4A61-BDE6-7DBB63E36D4E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E36F6CEE-080E-4A61-BDE6-7DBB63E36D4E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E36F6CEE-080E-4A61-BDE6-7DBB63E36D4E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{681F16AF-4473-46C7-A1CF-1C5EACB9F926}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{681F16AF-4473-46C7-A1CF-1C5EACB9F926}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{681F16AF-4473-46C7-A1CF-1C5EACB9F926}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{681F16AF-4473-46C7-A1CF-1C5EACB9F926}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{681F16AF-4473-46C7-A1CF-1C5EACB9F926}.Release|Any CPU.Build.0 = Release|Any CPU
+		{681F16AF-4473-46C7-A1CF-1C5EACB9F926}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {542FDA4A-EFFB-47D7-8912-C38206679714}
+	EndGlobalSection
+EndGlobal

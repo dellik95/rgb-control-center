@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="DellikCorp.Apps.RgbControlCenter.Views.ListDetailDetailPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:colorPicker="clr-namespace:DellikCorp.Libs.ColorPicker;assembly=DellikCorp.Libs.ColorPicker"
+    xmlns:models="clr-namespace:DellikCorp.Apps.RgbControlCenter.Models"
+    xmlns:vm="clr-namespace:DellikCorp.Apps.RgbControlCenter.ViewModels"
+    x:DataType="vm:ListDetailDetailViewModel">
+    <ScrollView>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="80" />
+                <RowDefinition Height="320" />
+                <RowDefinition Height="100" />
+                <RowDefinition Height="50" />
+                <RowDefinition Height="50" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+
+            <CollectionView
+                Grid.Row="1"
+                Grid.RowSpan="4"
+                Grid.Column="1"
+                Margin="0,0,0,15"
+                ItemsSource="{Binding Modes}"
+                RemainingItemsThreshold="10">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate x:DataType="models:RgbEffectMode">
+                        <Frame Margin="4" Padding="12">
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type vm:ListDetailDetailViewModel}}, Path=ApplyModeCommand}" CommandParameter="{Binding .}" />
+                            </Frame.GestureRecognizers>
+                            <Label FontSize="Large" Text="{Binding Name}" />
+                        </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+            <colorPicker:ColorWheelPicker
+                Grid.Row="1"
+                Grid.Column="0"
+                DragCompleted="ColorWheelPicker_OnDragCompleted"
+                SelectedColor="{Binding SelectedColor, Mode=TwoWay}" />
+
+            <Grid Grid.Row="2" Grid.Column="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <StackLayout Grid.Column="1">
+                    <Slider
+                        DragCompletedCommand="{Binding ColorChanelSelectedCommand}"
+                        Maximum="255"
+                        Minimum="0"
+                        MinimumTrackColor="Red"
+                        ThumbColor="Red"
+                        Value="{Binding RedColorChanel, Mode=TwoWay}" />
+                    <Slider
+                        DragCompletedCommand="{Binding ColorChanelSelectedCommand}"
+                        Maximum="255"
+                        Minimum="0"
+                        ThumbColor="Green"
+                        Value="{Binding GreenColorChanel, Mode=TwoWay}" />
+                    <Slider
+                        DragCompletedCommand="{Binding ColorChanelSelectedCommand}"
+                        Maximum="255"
+                        Minimum="0"
+                        ThumbColor="Blue"
+                        Value="{Binding BlueColorChanel, Mode=TwoWay}" />
+                </StackLayout>
+            </Grid>
+
+            <StackLayout Grid.Row="4" Grid.Column="0">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="50" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Label
+                        Grid.Column="0"
+                        FontFamily="FontAwesomeSolid"
+                        FontSize="30"
+                        HorizontalOptions="End"
+                        Text="fast-forward"
+                        VerticalOptions="Center" />
+                    <Slider
+                        Grid.Row="0"
+                        Grid.Column="1"
+                        Margin="10,0,10,0"
+                        DragCompletedCommand="{Binding SpeedSelectedCommand}"
+                        Maximum="6535"
+                        VerticalOptions="Center"
+                        Value="{Binding SelectedSpeed}" />
+                    <Label
+                        Grid.Row="0"
+                        Grid.Column="2"
+                        FontFamily="FontAwesomeSolid"
+                        FontSize="30"
+                        Text="fast-backward"
+                        VerticalOptions="Center" />
+                </Grid>
+            </StackLayout>
+
+            <StackLayout Grid.Row="5" Grid.Column="0">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="50" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Label
+                        Grid.Column="0"
+                        FontFamily="FontAwesomeSolid"
+                        FontSize="30"
+                        HorizontalOptions="End"
+                        Text="o"
+                        VerticalOptions="Center" />
+                    <Slider
+                        Grid.Row="0"
+                        Grid.Column="1"
+                        Margin="10,0,10,0"
+                        DragCompletedCommand="{Binding BrightnessSelectedCommand}"
+                        Maximum="254"
+                        Minimum="0"
+                        VerticalOptions="Center"
+                        Value="{Binding SelectedBrightness}" />
+                    <Label
+                        Grid.Row="0"
+                        Grid.Column="2"
+                        FontFamily="FontAwesomeSolid"
+                        FontSize="30"
+                        Text="sun"
+                        VerticalOptions="Center" />
+
+                </Grid>
+            </StackLayout>
+
+        </Grid>
+    </ScrollView>
+</ContentPage>

@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="DellikCorp.Apps.RgbControlCenter.MainPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+
+    <ScrollView>
+        <ListView ItemsSource="{Binding ConnectedItems}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Border>
+                        <Label Text="{Binding Name}" TextColor="Black" />
+                    </Border>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </ScrollView>
+
+</ContentPage>
